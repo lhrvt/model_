@@ -5,12 +5,25 @@
     <title>Modèle 3D de la combinaison spatiale de Neil Armstrong</title>
     <!-- Import the component -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <!-- Use it like any other HTML element -->
-    <model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="cuisinne_urp.glb" 
-     poster="shared-assets/models/NeilArmstrong.webp" shadow-intensity="1" 
-    camera-controls touch-action="pan-y"></model-viewer>
+    <model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer" scale="1 1 1" 
+    shadow-intensity="1" src="cuisinne_urp.glb" alt="An animated 3D model of a robot"></model-viewer></model-viewer>
 </body>
 </html>
 
