@@ -1,4 +1,3 @@
-<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +17,50 @@
             width: 100%;
             height: 100%;
         }
+        button {
+            font-size: 250px;
+            width: 30%;
+            height: 20%;
+        }
     </style>
+    
 </head>
+<button id="Frigo">Frigo</button>
+<button id="Placard">Placard</button>
+<button id="Congelo">Congelo</button>
 <body>
     <!-- Use it like any other HTML element -->
-    <model-viewer camera-controls touch-action="pan-y" autoplay ar ar-modes="webxr scene-viewer" scale="1 1 1" 
+    <model-viewer id ="modelViewer" camera-controls touch-action="pan-y"   ar ar-modes="webxr scene-viewer" scale="1 1 1" 
     shadow-intensity="1" src="cuisinne_urp.glb" alt="An animated 3D model of a robot"></model-viewer></model-viewer>
+    
+<script>
+
+    
+    // Sélectionnez l'élément sur lequel vous voulez détecter le clic
+    const Placard = document.getElementById('Placard');
+    const Congelo = document.getElementById('Congelo');
+    const Frigo = document.getElementById('Frigo');
+    
+    const modelViewer = document.querySelector('#modelViewer');
+    // Ajoutez un écouteur d'événements "click" à cet élément
+    Frigo.addEventListener('click', function(event) {
+        // Le code à exécuter lorsque le bouton est cliqué
+        // console.log(modelViewer.play);
+        modelViewer.animationName = "porte_frigo";
+        modelViewer.play();
+    });
+    Congelo.addEventListener('click', function(event) {
+        // Le code à exécuter lorsque le bouton est cliqué
+        // console.log(modelViewer.play);
+        modelViewer.animationName = "porte_congelo";
+        modelViewer.play();
+    });
+    Placard.addEventListener('click', function(event) {
+        // Le code à exécuter lorsque le bouton est cliqué
+        // console.log(modelViewer.play);
+        modelViewer.animationName = "placard";
+        modelViewer.play();
+    });
+</script>
 </body>
 </html>
-
-<!-- https://lhrvt.github.io/model_/
-
-<iframe src="https://lhrvt.github.io/model_" 
-idth="600" height="400" frameborder="0" scrolling="no"></iframe> -->
