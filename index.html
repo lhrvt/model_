@@ -42,7 +42,7 @@
     
 <script>
 
-    
+    const animationLength = 1934; // ms
     // Sélectionnez l'élément sur lequel vous voulez détecter le clic
     const Placard = document.getElementById('Placard');
     const Congelo = document.getElementById('Congelo');
@@ -55,18 +55,28 @@
         // console.log(modelViewer.play);
         modelViewer.animationName = "porte_frigo";
         modelViewer.play();
+        self.setTimeout(()=>{modelViewer.pause();}, animationLength);
+        
+        
+        
     });
     Congelo.addEventListener('click', function(event) {
         // Le code à exécuter lorsque le bouton est cliqué
         // console.log(modelViewer.play);
         modelViewer.animationName = "porte_congelo";
         modelViewer.play();
+        self.setTimeout(()=>{modelViewer.pause();}, animationLength);
+        
+        
     });
     Placard.addEventListener('click', function(event) {
         // Le code à exécuter lorsque le bouton est cliqué
         // console.log(modelViewer.play);
         modelViewer.animationName = "placard";
         modelViewer.play();
+        self.setTimeout(()=>{modelViewer.pause();}, animationLength);
+        
+       
     });
 </script>
 </body>
